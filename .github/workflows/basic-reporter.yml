@@ -35,8 +35,26 @@ jobs:
       - name: Publish Test Report
         uses: dorny/test-reporter@v1
         if: ${{ !cancelled() }}
+        id: test-report
         with:
           name: JEST Tests
           path: reports/jest-junit.xml
           reporter: jest-junit
-          fail-on-error: 'true'
+          fail-on-error: 'false'
+
+      - name: Print test results summary
+        if: ${{ !cancelled() }}
+        run: |
+          echo "====== TEST RESULTS SUMMARY ======"
+          echo "Conclusion: ${{ steps.test-report.outputs.conclusion }}"
+          echo "Passed:     ${{ steps.test-report.outputs.passed }}"
+          echo "Failed:     ${{ steps.test-report.outputs.failed }}"
+          echo "Skipped:    ${{ steps.test-report.outputs.skipped }}"
+          echo "Duration:   ${{ steps.test-report.outputs.time }}ms"
+          echo "Report URL: ${{ steps.test-report.outputs.url_html }}"
+
+      - name: Fail job if tests failed
+        if: steps.test-report.outputs.conclusion == 'failure'
+        run: |
+          echo "Tests failed! Failing the job."
+          exit 1
