@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="6" failures="0" errors="0" time="3.265">
+  <testsuite name="Calculator" errors="0" failures="0" skipped="0" timestamp="2026-06-29T16:43:00" time="2.529" tests="6">
+    <testcase classname="Calculator add adds two positive numbers" name="Calculator add adds two positive numbers" time="0.001">
+    </testcase>
+    <testcase classname="Calculator add adds negative numbers" name="Calculator add adds negative numbers" time="0">
+    </testcase>
+    <testcase classname="Calculator subtract subtracts correctly" name="Calculator subtract subtracts correctly" time="0.001">
+    </testcase>
+    <testcase classname="Calculator multiply multiplies correctly" name="Calculator multiply multiplies correctly" time="0">
+    </testcase>
+    <testcase classname="Calculator divide divides correctly" name="Calculator divide divides correctly" time="0.001">
+    </testcase>
+    <testcase classname="Calculator divide throws on divide by zero" name="Calculator divide throws on divide by zero" time="0.009">
+    </testcase>
+  </testsuite>
+</testsuites>
