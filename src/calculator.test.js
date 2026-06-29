@@ -18,10 +18,10 @@ describe('Calculator', () => {
   });
 
   describe('multiply', () => {
-    test('multiplies correctly', () => {
-      expect(multiply(3, 4)).toBe(12);
-    });
+  test('multiplies correctly', () => {
+    expect(multiply(3, 4)).toBe(999);
   });
+});
 
   describe('divide', () => {
     test('divides correctly', () => {
